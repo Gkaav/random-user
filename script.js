@@ -7,6 +7,12 @@ function fetchUser() {
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText)
 
+      const newDate = new Date("1954-03-14T11:51:37.701Z")
+
+      const year = newDate.getFullYear()
+      const monthName = newDate.toLocaleString('default', { month: 'long' });
+      const dayNumber = newDate.getDate()
+
       const name = "Name: " + response.results[0].name.first + ' ' + response.results[0].name.last
       document.querySelector('#name').textContent = name
 
@@ -19,7 +25,7 @@ function fetchUser() {
       const email = "Email: " + response.results[0].email
       document.querySelector('#email').textContent = email
 
-      const date = "Date: " + response.results[0].dob.date
+      const date = `Date: ${dayNumber} ${monthName}, ${year}`
       document.querySelector('#date').textContent = date
 
       const age = "Age: " + response.results[0].dob.age
@@ -38,3 +44,4 @@ function fetchUser() {
 }
 
 fetchUser()
+
