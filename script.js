@@ -38,5 +38,3 @@ function fetchUser() {
 }
 
 fetchUser()
-
-setInterval(fetchUser, 3500)
