@@ -4,7 +4,6 @@ function fetchUser() {
   xhr.open('GET', 'https://randomuser.me/api/')
 
   xhr.onload = function() {
-
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText)
 
@@ -30,16 +29,14 @@ function fetchUser() {
       const img = document.querySelector('#card-image')
       img.src = photo
       document.querySelector('#img-box').appendChild(img)
-
     } else {
       console.error('Error:', xhr.status)
     }
   }
 
-  
-
   xhr.send()
 }
 
+fetchUser()
 
 setInterval(fetchUser, 3500)
