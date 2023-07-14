@@ -103,4 +103,4 @@ function fetchUser() {
 }
 
 
-setInterval(fetchUser, 5000)
+setInterval(fetchUser, 3500)
